@@ -114,8 +114,8 @@ class MCVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MCParser#assigExpress.
-    def visitAssigExpress(self, ctx:MCParser.AssigExpressContext):
+    # Visit a parse tree produced by MCParser#assignExpress.
+    def visitAssignExpress(self, ctx:MCParser.AssignExpressContext):
         return self.visitChildren(ctx)
 
 
@@ -141,6 +141,11 @@ class MCVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by MCParser#blockStament.
     def visitBlockStament(self, ctx:MCParser.BlockStamentContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MCParser#bodyBlock.
+    def visitBodyBlock(self, ctx:MCParser.BodyBlockContext):
         return self.visitChildren(ctx)
 
 

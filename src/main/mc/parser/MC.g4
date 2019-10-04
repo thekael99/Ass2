@@ -1,4 +1,4 @@
-
+//1713215
 grammar MC;
 
 @lexer::header {
@@ -91,11 +91,11 @@ logicalOrExpress:
 	logicalAndExpress
 	| logicalOrExpress OR logicalAndExpress;
 
-assigExpress:
+assignExpress:
 	logicalOrExpress
-	| postExpress ASSIGN assigExpress;
+	| postExpress ASSIGN assignExpress;
 
-express: assigExpress;
+express: assignExpress;
 
 //Stament
 simpleStament:
@@ -109,7 +109,8 @@ structStamen: ifStament | doWhileStament | forStament;
 
 stament: simpleStament | structStamen;
 
-blockStament: LP (stament | varDec)* RP;
+blockStament: LP bodyBlock* RP;
+bodyBlock: stament | varDec;
 
 ifStament: IF LB express RB stament (ELSE stament)?;
 
