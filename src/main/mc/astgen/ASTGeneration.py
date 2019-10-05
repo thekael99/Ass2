@@ -88,7 +88,7 @@ class ASTGeneration(MCVisitor):
         elif ctx.RB():
             return self.visit(ctx.express())
         else:
-            self.visit(ctx.invocationExpress())
+            return self.visit(ctx.invocationExpress())
 
     def visitPostExpress(self, ctx: MCParser.PostExpressContext):
         priExp = self.visit(ctx.primaryExpress())
@@ -104,65 +104,65 @@ class ASTGeneration(MCVisitor):
 
     def visitUnaryExpress(self, ctx: MCParser.UnaryExpressContext):
         if ctx.SUB():
-            return Unary('-', self.visit(ctx.unaryExpress()))
+            return UnaryOp('-', self.visit(ctx.unaryExpress()))
         elif ctx.NOT():
-            return Unary('!', self.visit(ctx.unaryExpress()))
+            return UnaryOp('!', self.visit(ctx.unaryExpress()))
         else:
             return self.visit(ctx.postExpress())
 
     def visitMultiplicativeExpress(self, ctx: MCParser.MultiplicativeExpressContext):
         if ctx.DIV():
-            return Binary('/', self.visit(ctx.multiplicativeExpress()), self.visit(ctx.unaryExpress()))
+            return BinaryOp('/', self.visit(ctx.multiplicativeExpress()), self.visit(ctx.unaryExpress()))
         elif ctx.MUL():
-            return Binary('*', self.visit(ctx.multiplicativeExpress()), self.visit(ctx.unaryExpress()))
+            return BinaryOp('*', self.visit(ctx.multiplicativeExpress()), self.visit(ctx.unaryExpress()))
         elif ctx.MOD():
-            return Binary('%', self.visit(ctx.multiplicativeExpress()), self.visit(ctx.unaryExpress()))
+            return BinaryOp('%', self.visit(ctx.multiplicativeExpress()), self.visit(ctx.unaryExpress()))
         else:
             return self.visit(ctx.unaryExpress())
 
     def visitAdditiveExpress(self, ctx: MCParser.AdditiveExpressContext):
         if ctx.ADD():
-            return Binary('+', self.visit(ctx.additiveExpress()), self.visit(ctx.multiplicativeExpress()))
+            return BinaryOp('+', self.visit(ctx.additiveExpress()), self.visit(ctx.multiplicativeExpress()))
         elif ctx.SUB():
-            return Binary('-', self.visit(ctx.additiveExpress()), self.visit(ctx.multiplicativeExpress()))
+            return BinaryOp('-', self.visit(ctx.additiveExpress()), self.visit(ctx.multiplicativeExpress()))
         else:
             return self.visit(ctx.multiplicativeExpress())
 
     def visitRelaExpress(self, ctx: MCParser.RelaExpressContext):
         if ctx.LT():
-            return Binary('<', self.visit(ctx.additiveExpress()[0]), self.visit(ctx.additiveExpress()[1]))
+            return BinaryOp('<', self.visit(ctx.additiveExpress()[0]), self.visit(ctx.additiveExpress()[1]))
         elif ctx.LE():
-            return Binary('<=', self.visit(ctx.additiveExpress()[0]), self.visit(ctx.additiveExpress()[1]))
+            return BinaryOp('<=', self.visit(ctx.additiveExpress()[0]), self.visit(ctx.additiveExpress()[1]))
         elif ctx.GT():
-            return Binary('>', self.visit(ctx.additiveExpress()[0]), self.visit(ctx.additiveExpress()[1]))
+            return BinaryOp('>', self.visit(ctx.additiveExpress()[0]), self.visit(ctx.additiveExpress()[1]))
         elif ctx.GE():
-            return Binary('>=', self.visit(ctx.additiveExpress()[0]), self.visit(ctx.additiveExpress()[1]))
+            return BinaryOp('>=', self.visit(ctx.additiveExpress()[0]), self.visit(ctx.additiveExpress()[1]))
         else:
-            return self.visit(ctx.additiveExpress())
+            return self.visit(ctx.additiveExpress()[0])
 
     def visitEqualExpress(self, ctx: MCParser.EqualExpressContext):
         if ctx.EQUAL():
-            return Binary('==', self.visit(ctx.relaExpress()[0]), self.visit(ctx.relaExpress()[1]))
+            return BinaryOp('==', self.visit(ctx.relaExpress()[0]), self.visit(ctx.relaExpress()[1]))
         elif ctx.NOTEQUAL():
-            return Binary('!=', self.visit(ctx.relaExpress()[0]), self.visit(ctx.relaExpress()[1]))
+            return BinaryOp('!=', self.visit(ctx.relaExpress()[0]), self.visit(ctx.relaExpress()[1]))
         else:
-            return self.visit(ctx.relaExpress())
+            return self.visit(ctx.relaExpress()[0])
 
     def visitLogicalAndExpress(self, ctx: MCParser.LogicalAndExpressContext):
         if ctx.AND():
-            return Binary('&&', self.visit(ctx.logicalAndExpress()), self.visit(ctx.equalExpress()))
+            return BinaryOp('&&', self.visit(ctx.logicalAndExpress()), self.visit(ctx.equalExpress()))
         else:
             return self.visit(ctx.equalExpress())
 
     def visitLogicalOrExpress(self, ctx: MCParser.LogicalOrExpressContext):
         if ctx.OR():
-            return Binary('||', self.visit(ctx.logicalOrExpress()), self.visit(ctx.logicalAndExpress()))
+            return BinaryOp('||', self.visit(ctx.logicalOrExpress()), self.visit(ctx.logicalAndExpress()))
         else:
             return self.visit(ctx.logicalAndExpress())
 
     def visitAssignExpress(self, ctx: MCParser.AssignExpressContext):
         if ctx.ASSIGN():
-            return Binary('=', self.visit(ctx.postExpress()), self.visit(ctx.assignExpress()))
+            return BinaryOp('=', self.visit(ctx.postExpress()), self.visit(ctx.assignExpress()))
         else:
             return self.visit(ctx.logicalOrExpress())
 
