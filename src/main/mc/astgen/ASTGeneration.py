@@ -3,6 +3,7 @@ from MCParser import MCParser
 from AST import *
 from functools import reduce
 
+
 class ASTGeneration(MCVisitor):
     def visitProgram(self, ctx: MCParser.ProgramContext):
         result = reduce(lambda x, y: x + self.visit(y), ctx.decl(), [])
@@ -200,7 +201,7 @@ class ASTGeneration(MCVisitor):
             return Block(reduce(lambda x, y: x + self.visit(y), ctx.bodyBlock(), []))
         else:
             return Block([])
-    
+
     def visitBodyBlock(self, ctx: MCParser.BodyBlockContext):
         if ctx.stament():
             return [self.visit(ctx.stament())]
@@ -214,13 +215,13 @@ class ASTGeneration(MCVisitor):
             stm2 = self.visit(ctx.stament()[1])
             return If(exp, stm1, stm2)
         else:
-            stm = self.visit(ctx.stament())
+            stm = self.visit(ctx.stament()[0])
             return If(exp, stm)
 
     def visitDoWhileStament(self, ctx: MCParser.DoWhileStamentContext):
-        listStm = reduce(lambda x,y:x+[self.visit(y)],ctx.stament(),[])
+        listStm = reduce(lambda x, y: x+[self.visit(y)], ctx.stament(), [])
         exp = self.visit(ctx.express())
-        return Dowhile(listStm,exp)
+        return Dowhile(listStm, exp)
 
     def visitForStament(self, ctx: MCParser.ForStamentContext):
         exp1 = self.visit(ctx.express()[0])
@@ -237,7 +238,7 @@ class ASTGeneration(MCVisitor):
 
     def visitReturnStament(self, ctx: MCParser.ReturnStamentContext):
         if ctx.returnNone():
-            return self.visi(ctx.returnNone())
+            return self.visit(ctx.returnNone())
         else:
             return self.visit(ctx.returnValue())
 
