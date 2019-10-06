@@ -1,0 +1,7 @@
+void main(){
+                string str;
+                str = "Chery Chery Lady\n";
+                int a;
+                a = 10;
+                return;
+            }

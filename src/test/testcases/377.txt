@@ -1,0 +1,15 @@
+int main(){
+            do
+            {
+                {
+                    if (b>c)
+                        return a+1;
+                    else
+                        return b-1;                    
+                }
+            }
+            {
+                a+b;
+            }
+            while (a<5);
+        }

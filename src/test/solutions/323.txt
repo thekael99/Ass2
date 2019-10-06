@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main),[],IntType,Block([If(Id(n),Block([CallExpr(Id(printName),[])]),Block([CallExpr(Id(putInt),[IntLiteral(10)])]))]))])

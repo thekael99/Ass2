@@ -1,0 +1,42 @@
+int main()
+        {
+            int low, high, i, flag, temp;
+            printf("Enter two numbers(intevals): ");
+            scanf(low, high);
+            //swapping numbers if low is greater than high
+            if (low > high)
+            {
+                temp = low;
+                low = high;
+                high = temp;
+            }
+            printf(low, high);
+            do
+            {
+                int a;
+                for(i = 2; i <= low/2; i=i+1)
+                {
+                    if(low % i == 0)
+                    {
+                        flag = 1;
+                        break;
+                    }
+                }                
+            }
+            {
+                flag = 0;
+                for(i = 2; i <= low/2; i=i+1)
+                {
+                    if(low % i == 0)
+                    {
+                        flag = 1;
+                        break;
+                    }
+                }
+                if (flag == 0)
+                    printf(low);
+                low=low+1;
+            }
+            while (low < high);
+            return 0;
+            }

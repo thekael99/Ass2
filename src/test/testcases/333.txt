@@ -1,0 +1,7 @@
+int main(){
+            i=foo(1);
+            i=foo(i+2);
+            i=100*i+foo(1,2);
+            putInt(foo(1,2));
+            return 0; 
+        }

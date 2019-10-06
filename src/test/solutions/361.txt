@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main),[],IntType,Block([Return(BinaryOp(+,Id(a),CallExpr(Id(foo),[BinaryOp(+,Id(a),Id(b)),BinaryOp(*,Id(c),Id(d))])))]))])

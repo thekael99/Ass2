@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main),[],ArrayTypePointer(IntType),Block([Return(CallExpr(Id(getChild),[Id(tree),Id(root)]))]))])

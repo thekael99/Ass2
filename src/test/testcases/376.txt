@@ -1,0 +1,7 @@
+int[] foo (int b[]){
+            int a[69];
+            if (b>c)
+                return a+1;
+            else
+                return b-1;
+        }

@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main),[],VoidType,Block([VarDecl(Id(str),StringType),BinaryOp(=,Id(str),StringLiteral(Chery Chery Lady\n)),VarDecl(Id(a),IntType),BinaryOp(=,Id(a),IntLiteral(10)),Return()]))])

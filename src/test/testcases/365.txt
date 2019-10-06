@@ -1,0 +1,3 @@
+void main(){
+            return !foo(a[b[c[foo(d)]]]);
+        }

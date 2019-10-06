@@ -1,0 +1,8 @@
+int main(){
+            int a,b[10];
+            for (i=0;i<10;i=i+1)
+            {
+                a=i;
+                b[i]=i+(a+i)*a;
+            }   
+        }

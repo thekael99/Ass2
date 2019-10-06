@@ -1,0 +1,16 @@
+int main()
+        {
+            int n1, n2;    
+            printf("Enter two positive integers: ");
+            scanf(n1,n2);
+            do
+            {
+                if(n1 > n2)
+                    n1 = n1 - n2;
+                else
+                    n2 = n2 - n1;
+            }
+            while(n1!=n2);
+            printf("GCD = ",n1);
+            return 0;
+        }

@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main),[],IntType,Block([VarDecl(Id(fp),IntType),VarDecl(Id(c),IntType),BinaryOp(=,Id(fp),CallExpr(Id(fopen),[Id(__FILE__),StringLiteral(r)])),Dowhile([Block([BinaryOp(=,Id(c),CallExpr(Id(getc),[Id(fp)])),CallExpr(Id(putchar),[Id(c)])])],BinaryOp(!=,Id(c),Id(EOF))),CallExpr(Id(fclose),[Id(fp)]),Return(IntLiteral(0))]))])

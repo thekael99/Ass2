@@ -1,0 +1,11 @@
+int main(){
+            int n;
+            n=10;
+            if (n>10)
+            {
+                printName();
+            }
+            else{
+                n=n+1;
+            }
+        }

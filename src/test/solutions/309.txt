@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main),[],VoidType,Block([VarDecl(Id(a),IntType),Block([BinaryOp(=,Id(a),IntLiteral(1))]),If(BinaryOp(==,Id(a),IntLiteral(1)),Return(),Return())]))])

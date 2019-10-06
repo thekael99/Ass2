@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main),[],IntType,Block([VarDecl(Id(check),BoolType),If(UnaryOp(!,Id(check)),CallExpr(Id(print),[Id(check)]),Block([CallExpr(Id(print),[UnaryOp(!,Id(check))])]))]))])

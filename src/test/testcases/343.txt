@@ -1,0 +1,22 @@
+int x,y[8];
+        int a,b,c;
+        void main(){
+            array[d[r[a(10)]]];
+        }
+        void rescusive(int i,float z){
+            int x;
+            int c;
+            if(exp)
+                stamentt;
+            else
+                stmt;
+            for(w;i;z){
+                int x;
+                if(a==5)
+                    x=5;
+            
+                for (exp1;exp2;exp3) printf();
+                int x,y,arr[69];
+            }
+            return ;
+        }

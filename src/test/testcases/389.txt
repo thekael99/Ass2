@@ -1,0 +1,30 @@
+// user-defined function to check prime number
+        int checkPrimeNumber(int n)
+        {
+            int j, flag;
+            for(j=2; j <= n/2; j=j+1)
+            {
+                if (n%j == 0)
+                {
+                    flag =0;
+                    break;
+                }
+            }
+        return flag;
+        }
+
+        int main()
+        {
+            int n1, n2, i, flag;
+            printf("Enter two positive integers: ");
+            scanf(n1, n2);
+            printf(n1, n2);
+            for(i=n1+1; i<n2; i=i+1)
+            {
+                // i is a prime number, flag will be equal to 1
+                flag = checkPrimeNumber(i);
+                if(flag == 1)
+                printf(i);
+            }
+            return 0;
+        }

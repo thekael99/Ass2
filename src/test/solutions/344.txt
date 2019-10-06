@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(func),[],VoidType,Block([If(BinaryOp(<=,Id(a),Id(b)),Block([Return(Id(a))]))]))])

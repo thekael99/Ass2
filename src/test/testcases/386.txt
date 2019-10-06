@@ -1,0 +1,28 @@
+int main()
+        {
+            int n, i, flag;
+            printf("Enter a positive integer: ");
+            scanf(n);
+            for(i = 2; i <= n/2; i=i+1)
+                {
+                    // condition for nonprime number
+                    if((n%i) == 0)
+                    {
+                        flag = 1;
+                        break;
+                    }
+                }
+            if (n == 1) 
+                {
+                    printf("1 is neither a prime nor a composite number.");
+                }
+            else 
+                {
+                    if (flag == 0)
+                        printf(n);
+                    else
+                        printf(n);
+                }
+    
+            return 0;
+        }

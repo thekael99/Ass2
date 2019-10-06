@@ -1,0 +1,10 @@
+int main(){
+            if (n)
+            {
+                printName();    
+            }
+            else
+            {
+                putInt(10);
+            }          
+        }

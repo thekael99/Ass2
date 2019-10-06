@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo),[VarDecl(Id(b),ArrayTypePointer(IntType))],ArrayTypePointer(IntType),Block([VarDecl(Id(a),ArrayType(IntType,69)),If(BinaryOp(>,Id(b),Id(c)),Return(BinaryOp(+,Id(a),IntLiteral(1))),Return(BinaryOp(-,Id(b),IntLiteral(1))))]))])

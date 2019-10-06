@@ -1,0 +1,10 @@
+int main(){
+                foo(a,b);
+            }
+            void foo(int a[], float b){
+                if (a == 0) 
+                    return a;
+                else {
+                    foo(b,a);
+                }
+            }

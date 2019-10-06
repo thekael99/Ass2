@@ -1,0 +1,15 @@
+int main()
+        {
+            int dividend, divisor, quotient, remainder;
+            printf("Enter dividend: ");
+            scanf(dividend);
+            printf("Enter divisor: ");
+            scanf(divisor);
+            // Computes quotient
+            quotient = dividend / divisor;
+            // Computes remainder
+            remainder = dividend % divisor;
+            printf("Quotient = ", quotient);
+            printf("Remainder = ", remainder);
+            return 0;
+        }

@@ -1,0 +1,13 @@
+int main()
+        {
+            int fp;
+            int c;
+            fp = fopen(__FILE__,"r");
+            do {
+                c = getc(fp);
+                putchar(c);
+            }
+            while(c != EOF);
+            fclose(fp);
+            return 0;
+        }

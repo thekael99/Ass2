@@ -1,0 +1,24 @@
+int getPower(int b,int p)
+        {
+            int result;
+            if(p==0)
+                return result;
+            result=b*(getPower(b,p-1));  //call function again
+        }
+        int main()
+        {
+            int base,power;
+            int result;
+     
+            printf("Enter value of base: ");
+            scanf(base);
+     
+            printf("Enter value of power: ");
+            scanf(power);
+     
+            result=getPower(base,power);
+     
+            printf(base,power,result);
+     
+            return 0;
+        }

@@ -1,0 +1,4 @@
+int main(){
+            int a[4],i;
+            do putInt(4); i=i+1; while a[-foo(i)]==true;
+        }

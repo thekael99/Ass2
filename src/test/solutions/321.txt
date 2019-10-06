@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main),[],VoidType,Block([If(Id(a),If(Id(b),If(Id(c),Id(a),Id(a)),Id(b)))]))])

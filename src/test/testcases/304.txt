@@ -1,0 +1,14 @@
+void main(){
+                {
+                    int a,b;
+                    boolean c,d;
+                    a = 10 ;
+                    b = 5;
+                    c = true;
+                    d = c == (a>b);
+                }
+                {
+                    a = a+b; 
+                }
+                return;
+            }

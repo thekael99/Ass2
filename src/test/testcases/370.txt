@@ -1,0 +1,12 @@
+int main(){
+            string a,b,c;
+            a="";
+            b="b";
+            c="c";
+            for(a="";length(a)<20;a=append(a,a))
+            {
+                b=b*2;
+                c=c+b;
+            }
+            return length(b);
+        }

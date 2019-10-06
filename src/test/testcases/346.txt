@@ -1,0 +1,7 @@
+string test(int test[],string test1){
+            boolean check;
+            check = false;
+            if (check==true) 
+                a=2; 
+            else a=3;
+        }

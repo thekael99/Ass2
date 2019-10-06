@@ -1,0 +1,5 @@
+string test(int test[],string test1){
+            if (a>b+c) 
+                a=2; else a=3;
+            return "kael99";
+        }

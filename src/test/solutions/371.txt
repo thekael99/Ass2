@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo),[VarDecl(Id(a),IntType),VarDecl(Id(b),ArrayTypePointer(FloatType))],IntType,Block([VarDecl(Id(c),BoolType),VarDecl(Id(i),IntType),BinaryOp(=,Id(i),BinaryOp(+,Id(a),IntLiteral(3))),If(BinaryOp(>,Id(i),IntLiteral(0)),Block([VarDecl(Id(d),IntType),BinaryOp(=,Id(d),BinaryOp(+,Id(i),IntLiteral(3))),CallExpr(Id(putInt),[Id(d)])])),Return(Id(i))]))])

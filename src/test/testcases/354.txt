@@ -1,0 +1,8 @@
+int main(){
+            if (a<b) c=a; 
+            else 
+                if(c<b)
+                    c=b;
+                else
+                    c=b;
+        }

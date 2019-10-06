@@ -1,0 +1,15 @@
+int foo(int a){
+                if((a%2)==0)
+                    a=a+1;
+                else
+                    do a=a-1;
+                    while a > 0;
+                return a;
+            }
+            void main(){
+                int a,b[10],i;
+                a=10;
+                for(i=0;i<10;i=i+1)
+                    b[i]=foo(a);                
+                return;
+            }
