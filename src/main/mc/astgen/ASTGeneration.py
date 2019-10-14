@@ -25,9 +25,9 @@ class ASTGeneration(MCVisitor):
 
     def visitIdVar(self, ctx: MCParser.IdVarContext):
         if ctx.INTLIT():
-            return [Id(ctx.ID().getText()), int(ctx.INTLIT().getText())]
+            return (ctx.ID().getText(), int(ctx.INTLIT().getText()))
         else:
-            return [Id(ctx.ID().getText()), None]
+            return (ctx.ID().getText(), None)
 
     def visitFuncDec(self, ctx: MCParser.FuncDecContext):
         returnType = self.visit(ctx.funcType())
@@ -44,7 +44,7 @@ class ASTGeneration(MCVisitor):
 
     def visitArg(self, ctx: MCParser.ArgContext):
         priType = self.visit(ctx.priType())
-        name = Id(ctx.ID().getText())
+        name = ctx.ID().getText()
         if ctx.LSB():
             return VarDecl(name, ArrayPointerType(priType))
         else:

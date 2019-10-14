@@ -89,7 +89,7 @@ class ParserSuite(unittest.TestCase):
 
     def test7(self):
         input = """void main(){
-                string str = "Chery Chery Lady\\n";
+                string str = "Chery Chery Lady\\n"
                 int a = 10;
                 return;
             }"""
